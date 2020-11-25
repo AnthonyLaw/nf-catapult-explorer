@@ -20,9 +20,10 @@ script:
   - npm run lint:css
 jobs:
   include:
-    - stage: start
-      name: lint
+    - stage: e2e
+      name: test
       script: npm run test:network
+      node_js: 10
 deploy:
     # automation build docker images for release branch
   - provider: script
