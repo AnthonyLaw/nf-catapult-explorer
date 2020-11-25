@@ -8,9 +8,13 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "lint:css": "stylelint '**/*.vue' src/styles/main.scss --syntax scss",
-    "test:e2e": "vue-cli-service test:e2e --headless",
+    "test:e2e": "vue-cli-service test:e2e --headless --url http://explorer-0.10.0.x-01.symboldev.network/",
     "test": "vue-cli-service test:unit",
-    "version": "echo $npm_package_version"
+    "version": "echo $npm_package_version",
+    "clean-network": "symbol-bootstrap clean",
+    "run-network": "symbol-bootstrap start -c ./e2e/config/localnetwotk.yml --detached --healthCheck",
+    "run-stop": "symbol-bootstrap stop",
+    "test:network": "npm run clean-network && npm run run-network && npm run integration-test && npm run stop-network"
   },
   "dependencies": {
     "@babel/plugin-proposal-optional-chaining": "^7.8.3",
@@ -57,6 +61,7 @@
     "stylelint": "^11.1.1",
     "stylelint-config-standard": "^19.0.0",
     "stylelint-processor-html": "^1.0.0",
+    "symbol-bootstrap": "^0.2.1",
     "vue-jest": "^3.0.5",
     "vue-template-compiler": "^2.6.11"
   }
