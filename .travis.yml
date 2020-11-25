@@ -18,6 +18,11 @@ before_script:
 script:
   - npm run lint
   - npm run lint:css
+jobs:
+  include:
+    - stage: start
+      name: lint
+      script: npm run test:network
 deploy:
     # automation build docker images for release branch
   - provider: script
