@@ -14,7 +14,7 @@
     "clean-network": "symbol-bootstrap clean",
     "run-network": "symbol-bootstrap start -c ./e2e/config/localnetwotk.yml --detached --healthCheck",
     "run-stop": "symbol-bootstrap stop",
-    "test:network": "npm run clean-network && npm run run-network && npm run integration-test && npm run stop-network"
+    "test:network": "npm run clean-network && npm run run-network && npm run stop-network"
   },
   "dependencies": {
     "@babel/plugin-proposal-optional-chaining": "^7.8.3",
